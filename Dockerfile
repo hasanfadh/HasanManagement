@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
+    libzip-dev \
+    zip \
     unzip \
     git
 
@@ -14,6 +16,9 @@ RUN docker-php-ext-install gd
 
 # Install PHP extensions needed by Laravel
 RUN docker-php-ext-install pdo pdo_mysql
+
+RUN docker-php-ext-configure zip
+RUN docker-php-ext-install zip
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
