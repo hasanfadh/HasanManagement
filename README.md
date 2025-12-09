@@ -385,9 +385,6 @@ HasanManagement/
 
 ## Testing
 
-### Manual Testing
-Ikuti panduan user testing di `docs/user-testing-tasks.md`
-
 ### Unit Testing (Coming Soon)
 ```bash
 php artisan test
